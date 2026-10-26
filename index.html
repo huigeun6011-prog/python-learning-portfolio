@@ -3,65 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GitHub 첫 레포 STAR 정리</title>
+  <title>학습 일지 · STAR 기록</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
-    <h1>GitHub 첫 레포 만들기</h1>
-    <p class="subtitle">STAR 기법으로 정리한 학습 기록</p>
+    <h1>학습 일지</h1>
+    <p class="subtitle">STAR 기법으로 정리하는 날짜별 기록</p>
+    <div class="summary-bar">
+      <span>총 <strong>1</strong>일 기록</span>
+      <span class="dot">·</span>
+      <span>최근 업데이트 <strong>2026.10.26</strong></span>
+    </div>
   </header>
 
   <main>
-    <section class="star-grid">
-      <article class="card card--s">
-        <span class="badge">S</span>
-        <h2>Situation · 상황</h2>
-        <p>프로젝트 결과물을 버전 관리하고 공유해야 했지만, Git/GitHub 사용 경험이 없어 전체 흐름을 몰랐다.</p>
-      </article>
+    <div class="timeline">
 
-      <article class="card card--t">
-        <span class="badge">T</span>
-        <h2>Task · 과제</h2>
-        <p>GitHub에서 새 저장소를 만들고 로컬 프로젝트를 업로드하는 전체 과정을 직접 확인하고 싶었다.</p>
-      </article>
+      <!-- ===== 2026.10.26 (오늘 · 펼침) ===== -->
+      <details class="entry" open>
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.10.26</span>
+          <span class="entry-title">GitHub 첫 레포 만들기</span>
+          <span class="entry-new">NEW</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
 
-      <article class="card card--a">
-        <span class="badge">A</span>
-        <h2>Action · 행동</h2>
-        <ul>
-          <li><code>git init</code> 로컬 저장소 초기화</li>
-          <li><code>git remote add origin</code> 원격 연결</li>
-          <li><code>git add .</code> / <code>git commit</code></li>
-          <li><code>git push -u origin main</code></li>
-        </ul>
-      </article>
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>Github 기본적인 사용방법 학습하고 있었다.</p>
+                
+              </div>
+            </article>
 
-      <article class="card card--r">
-        <span class="badge">R</span>
-        <h2>Result · 결과</h2>
-        <p>생성 → 초기화 → 연결 → 커밋 → 푸시의 전체 흐름을 이해했고, 커밋과 푸시의 차이를 명확히 알게 되었다.</p>
-      </article>
-    </section>
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>직접 레포지토리를 생성하고 로컬 저장소와 연결하여</p>
+                <p>add, commit, push와 같은 일련의 과정을 직접 시도해보았다.</p>
+              </div>
+            </article>
 
-    <section class="flow">
-      <h2>전체 흐름</h2>
-      <div class="flow-steps">
-        <div class="step">저장소 생성</div>
-        <div class="arrow">→</div>
-        <div class="step">git init</div>
-        <div class="arrow">→</div>
-        <div class="step">remote add</div>
-        <div class="arrow">→</div>
-        <div class="step">commit</div>
-        <div class="arrow">→</div>
-        <div class="step">push</div>
-      </div>
-    </section>
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li><code>git init</code> 로컬 저장소 초기화</li>
+                  <li><code>git remote add origin</code> 원격 연결</li>
+                  <li><code>git add .</code> / <code>git commit</code></li>
+                  <li><code>git push -u origin main</code></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <p>생성 → 초기화 → 연결 → 커밋 → 푸시의 전체 흐름을 이해했다.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="flow">
+            <div class="flow-steps">
+              <div class="step">저장소 생성</div>
+              <div class="arrow">→</div>
+              <div class="step">git init</div>
+              <div class="arrow">→</div>
+              <div class="step">remote add</div>
+              <div class="arrow">→</div>
+              <div class="step">commit</div>
+              <div class="arrow">→</div>
+              <div class="step">push</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
   </main>
 
   <footer>
-    <p>Made with GitHub-style theme · White / Green / Orange</p>
+    <p>STAR 학습 일지 · White / Orange theme</p>
   </footer>
 </body>
 </html>
