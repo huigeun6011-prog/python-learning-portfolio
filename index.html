@@ -11,22 +11,21 @@
     <h1>학습 일지</h1>
     <p class="subtitle">STAR 기법으로 정리하는 날짜별 기록</p>
     <div class="summary-bar">
-      <span>총 <strong>1</strong>일 기록</span>
+      <span>총 <strong>3</strong>일 기록</span>
       <span class="dot">·</span>
-      <span>최근 업데이트 <strong>2026.10.26</strong></span>
+      <span>최근 업데이트 <strong>2026.10.28</strong></span>
     </div>
   </header>
 
   <main>
     <div class="timeline">
 
-      <!-- ===== 2026.10.26 (오늘 · 펼침) ===== -->
-      <details class="entry" open>
+      <!-- ===== 2026.10.26 ===== -->
+      <details class="entry">
         <summary class="entry-head">
           <span class="entry-dot"></span>
           <span class="entry-date">2026.10.26</span>
           <span class="entry-title">GitHub 첫 레포 만들기</span>
-          <span class="entry-new">NEW</span>
           <span class="entry-chevron">▾</span>
         </summary>
 
@@ -87,7 +86,108 @@
           </div>
         </div>
       </details>
+      <!-- ===== 2026.10.27 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.10.27</span>
+          <span class="entry-title">폴더 만들기와 경로 이동</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
 
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>터미널에서 폴더를 만들고 다른 폴더로 이동해야 했는데, 명령어들이 영어 약자라 의미가 잘 와닿지 않아 헷갈렸다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p><code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>mkdir</code>이 각각 무슨 약자이고 어떤 역할을 하는지 확인하고 싶었다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li><code>pwd</code> → <strong>Print Working Directory</strong> : 현재 위치한 경로 출력</li>
+                  <li><code>ls</code> → <strong>List</strong> : 현재 폴더의 파일/폴더 목록 보기</li>
+                  <li><code>cd</code> → <strong>Change Directory</strong> : 다른 폴더로 이동</li>
+                  <li><code>mkdir</code> → <strong>Make Directory</strong> : 새 폴더 생성</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <p>각 명령어가 영어 단어의 앞글자 조합이라는 걸 알게 되었고, 약자만 알아도 역할이 자연스럽게 떠오르게 되었다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
+      <!-- ===== 2026.10.28 ===== -->
+      <details class="entry" open>
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.10.28</span>
+          <span class="entry-title">파이썬 가상환경 구축과 pip install</span>
+          <span class="entry-new">NEW</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>파이썬 프로젝트를 진행하려는데, 패키지를 전역(global)에 설치하면 다른 프로젝트와 버전이 충돌할 것 같아 걱정이었다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>프로젝트별로 독립된 <strong>가상환경(venv)</strong>을 만들고, 그 안에서 <code>pip install</code>로 패키지를 설치하는 흐름을 익히고 싶었다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li><code>python -m venv venv</code> → 가상환경 폴더 생성</li>
+                  <li><code>source venv/bin/activate</code> (macOS/Linux) 또는 <code>venv\Scripts\activate</code> (Windows) → 가상환경 활성화</li>
+                  <li><code>pip install &lt;패키지명&gt;</code> → 가상환경 안에 패키지 설치</li>
+                  <li><code>pip list</code> → 설치된 패키지 확인</li>
+                  <li><code>deactivate</code> → 가상환경 종료</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <p>가상환경을 활성화한 상태에서만 <code>pip install</code>이 해당 환경에 적용된다는 것을 알게 되었다. 프롬프트 앞에 <code>(venv)</code>가 붙으면 활성화된 상태라는 표시라는 점도 확인했다. 프로젝트마다 환경을 분리하면 버전 충돌을 피할 수 있다는 걸 이해했다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
