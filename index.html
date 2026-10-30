@@ -193,7 +193,6 @@
           <span class="entry-dot"></span>
           <span class="entry-date">2026.10.29</span>
           <span class="entry-title">Flask와 schedule이 뭔지 찾아보다</span>
-          <span class="entry-new">NEW</span>
           <span class="entry-chevron">▾</span>
         </summary>
 
@@ -231,6 +230,59 @@
               <div class="card-content">
                 <h2>Result · 결과</h2>
                 <p>Flask는 <strong>웹사이트를 만들어주는 도구</strong>, schedule은 <strong>시간 맞춰 코드를 실행해주는 도구</strong>라는 차이를 알게 됐다. 아직 직접 써보진 않았지만, 과제에서 왜 이 둘을 설치하라고 했는지 감이 잡혔다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
+            <!-- ===== 2026.10.30 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.10.30</span>
+          <span class="entry-title">Gemini API 키 발급과 파이썬 파일 입출력</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>Gemini API 키를 발급받아 <code>.env</code>에 넣어보고, 파이썬 파일 입출력을 배웠다</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>과제에서 시킨 대로 API 키를 <code>.env</code>에 보관하고, 그 키로 모델 목록을 확인해보는 것. 그리고 파이썬에서 파일을 읽고 쓰는 것까지 해보는 게 목표였다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li><strong>API 키 발급 → <code>.env</code>에 저장</strong> : 키를 코드에 그대로 쓰지 않고 <code>.env</code> 파일에 따로 넣어 관리한다는 걸 알게 됐다.</li>
+                  <li><strong>curl로 요청 → grep으로 확인</strong> : 터미널에서 curl로 Gemini API에 요청을 보내고, 응답 중 <code>gemini-3.5</code> 모델이 목록에 있는지 grep으로 걸러서 확인했다.</li>
+                  <li><strong>파이썬 파일 입출력</strong> : <code>with open(...)</code> 으로 파일을 열어 읽고 쓰는 방식을 해봤다. <code>with</code>를 쓰면 파일을 자동으로 닫아준다는 걸 알게 됐다.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <ul>
+                  <li>API 키는 코드에 직접 쓰지 않고 <code>.env</code> 같은 파일에 따로 보관한다는 걸 이해했다.</li>
+                  <li>curl로 API를 직접 찔러보고 grep으로 결과를 걸러 확인하는 흐름을 익혔다.</li>
+                  <li>파이썬 파일 입출력은 <code>with open</code>으로 여는 게 기본이라는 것, 그리고 <code>with</code>를 쓰면 close를 따로 안 해도 된다는 걸 알게 됐다.</li>
+                </ul>
               </div>
             </article>
           </div>
