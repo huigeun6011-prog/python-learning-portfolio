@@ -235,7 +235,7 @@
           </div>
         </div>
       </details>
-            <!-- ===== 2026.10.30 ===== -->
+      <!-- ===== 2026.10.30 ===== -->
       <details class="entry">
         <summary class="entry-head">
           <span class="entry-dot"></span>
@@ -282,6 +282,67 @@
                   <li>API 키는 코드에 직접 쓰지 않고 <code>.env</code> 같은 파일에 따로 보관한다는 걸 이해했다.</li>
                   <li>curl로 API를 직접 찔러보고 grep으로 결과를 걸러 확인하는 흐름을 익혔다.</li>
                   <li>파이썬 파일 입출력은 <code>with open</code>으로 여는 게 기본이라는 것, 그리고 <code>with</code>를 쓰면 close를 따로 안 해도 된다는 걸 알게 됐다.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
+      <!-- ===== 2026.11.02 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.02</span>
+          <span class="entry-title">기존 폴더를 GitHub 저장소와 연결하기</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>지금까지는 PC 폴더와 GitHub 저장소가 따로 있어서 파일을 웹 화면에서 하나씩 올렸다. 하지만 <code>security-agent-toolkit</code> 폴더는 이미 GitHub에 올려둔 상태라, 폴더를 내려받거나 옮기지 않고 그 자리에서 GitHub 저장소와 연결하는 과제가 나왔다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p><code>security-agent-toolkit</code> 폴더를 그대로 둔 채 GitHub 원격 저장소와 연결하고, <code>.env</code>·<code>.venv</code> 같은 민감/불필요 파일은 올라가지 않게 <code>.gitignore</code>로 막은 뒤, <code>git status</code>로 정상 연결 상태를 확인하는 것이 목표였다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li>VS Code 통합 터미널에서 <code>pwd</code>로 경로가 <code>.../security-agent-toolkit</code>으로 끝나는지 확인 (<code>agent_core</code>면 <code>cd ..</code>)</li>
+                  <li>GitHub에서 <strong>Code → HTTPS 주소 복사</strong></li>
+                  <li><code>git init -b main</code> → 이 폴더를 git 폴더로 만들고 첫 브랜치 이름을 <code>main</code>으로</li>
+                  <li><code>git remote add origin &lt;내 주소&gt;</code> → GitHub 저장소를 <code>origin</code>으로 등록</li>
+                  <li><code>git fetch origin</code> → GitHub에 있던 기록을 받아옴</li>
+                  <li><code>git reset origin/main</code> → 내 폴더의 기록 위치를 GitHub 기록에 맞춤 (<code>--hard</code> 없이, 내 파일은 그대로)</li>
+                  <li><code>git branch -u origin/main</code> → 다음부터 <code>git push</code>만 써도 되게 짝(업스트림)을 정함</li>
+                  <li><code>git status</code> → <code>On branch main</code> 확인</li>
+                  <li><code>.gitignore</code>에 <code>.env</code>, <code>.venv</code> 두 줄 추가 후 다시 <code>git status</code>로 목록에 없는지 확인</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <ul>
+                  <li><code>git status</code>에 <strong><code>On branch main</code></strong> 과 <strong><code>Your branch is up to date with 'origin/main'</code></strong>이 뜨는 걸 보고, 폴더가 GitHub 저장소와 제대로 연결됐다는 걸 확인했다.</li>
+                  <li><code>git init</code>은 로컬 폴더를 git이 기록하는 폴더로 만드는 것, <code>git remote add</code>는 그 폴더와 GitHub 저장소를 짝지어 주는 것이라는 차이를 이해했다.</li>
+                  <li><code>git reset origin/main</code>은 내 파일은 건드리지 않고 기록 위치만 GitHub에 맞추는 명령이고, <code>--hard</code>를 붙이면 파일이 덮어써진다는 걸 알게 됐다.</li>
+                  <li><code>.gitignore</code>에 <code>.env</code>·<code>.venv</code>를 넣으면 <code>git status</code> 목록에서 아예 사라진다는 것도 확인했다. 민감한 파일을 실수로 올리는 걸 막는 게 이 설정의 목적이라는 걸 이해했다.</li>
+                  <li>추가로 <code>ls -a</code>로 숨김 폴더 <code>.git</code>이 보이는지, <code>git log --oneline</code>으로 10/26부터 웹에서 올린 기록이 한 줄씩 보이는지 확인했다.</li>
                 </ul>
               </div>
             </article>
