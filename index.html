@@ -349,6 +349,63 @@
           </div>
         </div>
       </details>
+      <!-- ===== 2026.11.03 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.03</span>
+          <span class="entry-title">딕셔너리 접근법과 JSON 사용법</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>과제에서 <code>agent_core</code>에 <code>assignment_08_f1.py</code>와 <code>assignment_08_f2.py</code>를 직접 작성하라고 했다. 리스트는 번호로 꺼내는데, 로그 한 줄처럼 여러 정보가 묶인 데이터는 번호만으로는 "3번이 뭐였는지" 기억하기 어려웠다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>딕셔너리로 <strong>이름(키)으로 값을 꺼내는 법</strong>과, 그 딕셔너리를 <strong>JSON으로 저장·복원하는 법</strong>을 익히고, 필수 F1·F2와 선택 문제 R1~R7까지 풀어보는 것이 목표였다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li>딕셔너리 기본 : <code>user["name"]</code>처럼 키로 값 꺼내기, <code>user["level"] = "admin"</code>처럼 있는 키는 바꾸고 없는 키는 새로 생기는 것 확인</li>
+                  <li><code>.get()</code> : 없는 키를 대괄호로 꺼내면 <code>KeyError</code>로 멈추지만, <code>log.get("ip")</code>는 <code>None</code>, <code>log.get("ip", "-")</code>는 기본값을 돌려줌</li>
+                  <li>중첩 : <code>logs[0]["user"]</code>(리스트 안 딕셔너리), <code>report["admin"]["fail"]</code>(딕셔너리 안 딕셔너리), <code>alerts[0]["tags"][1]</code>(값 자리에 리스트)</li>
+                  <li>JSON : <code>json.dumps()</code>/<code>json.loads()</code>는 글자로, <code>json.dump()</code>/<code>json.load()</code>는 파일로, <code>ensure_ascii=False</code>·<code>indent=2</code> 설정</li>
+                  <li>필수 F1·F2 및 선택 R1~R7까지 직접 작성·실행 (R7에서 중첩 꺼내기까지)</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <ul>
+                  <li>리스트는 <strong>같은 것이 여러 개</strong>일 때, 딕셔너리는 <strong>하나에 대한 여러 정보</strong>를 담을 때 쓴다는 차이를 이해했다.</li>
+                  <li><code>[]</code>는 반드시 있어야 하는 값에, <code>.get()</code>은 없을 수도 있는 값에 쓴다는 걸 알게 됐다. 항상 <code>.get()</code>을 쓰면 없는 게 문제인 값까지 조용히 넘어가서 오히려 버그를 찾기 어려워진다는 점이 인상적이었다.</li>
+                  <li>중첩은 <strong>바깥은 번호, 안쪽은 이름</strong>(또는 그 반대)을 번갈아 쓰면 된다는 규칙을 잡았다.</li>
+                  <li><code>dumps</code>는 s가 붙으면 글자, <code>dump</code>는 파일이라는 차이, 그리고 <code>ensure_ascii=False</code>를 안 넣으면 한글이 <code>\uc57c</code>처럼 깨진다는 걸 직접 확인했다.</li>
+                  <li>R7까지만 풀었고, R8 이후(JSON 한글·파일 저장 등)는 다음에 이어서 하기로 했다.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
