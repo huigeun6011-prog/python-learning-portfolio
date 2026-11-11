@@ -406,6 +406,79 @@
           </div>
         </div>
       </details>
+
+      <!-- ===== 2026.11.11 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.11</span>
+          <span class="entry-title">grep 옵션과 파일 생성 명령의 유래</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>과제에서 <code>grep</code>을 <code>-n</code>, <code>-c</code> 옵션과 함께 써보라고 했다. <code>grep</code>은 이름만 들어봤고, 솔직히 "grab"처럼 뭔가 잡아온다는 느낌으로만 알고 있었다. 또 파이썬에서 <code>.csv</code> 파일을 다루는 것도 이번에 처음 해봤다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <ul>
+                  <li><code>grep -n</code>, <code>grep -c</code>가 각각 무엇을 보여주는지 확인하기</li>
+                  <li>보안 담당자가 <code>grep</code>을 왜 쓰는지 찾아보기</li>
+                  <li><code>grep</code>이 실제로 무슨 약자인지 알아보기</li>
+                  <li>파이썬에서 <code>.csv</code> 파일을 읽으면 어떤 형태로 들어오는지 확인하기</li>
+                  <li>폴더는 <code>mkdir</code>인데 파일은 왜 <code>mkfile</code>이 아니라 <code>touch</code>인지 찾아보기</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li><strong><code>grep -n</code></strong> : 찾는 대상이 몇 번째 줄에 있는지, 그 줄에 무엇이 적혀 있는지 함께 보여준다.</li>
+                  <li><strong><code>grep -c</code></strong> : 찾는 대상이 몇 번 등장하는지 개수만 보여준다.</li>
+                  <li><strong>보안 담당자가 grep을 쓰는 이유</strong> : 절대 쓰면 안 되는 것이 쓰였는지 쉽게 파악할 수 있고, 패턴을 추출하기 편하기 때문이다.</li>
+                  <li><strong>grep의 약자</strong> : <code>Global Regular Expression Print</code>의 약자다. (grab이 아니라)</li>
+                  <li><strong>파이썬의 <code>.csv</code></strong> : <code>.csv</code> 파일을 읽으면 딕셔너리 형태로 가져와진다.</li>
+                  <li><strong><code>touch</code> vs <code>mkfile</code></strong> : <code>touch</code>는 원래 이런 역할이 아니었는데 지금처럼 파일을 만드는 용도로 쓰이게 된 것이다. 운영체제에 따라 <code>mkfile</code>이 실제로 있기도 한데 용도가 다르고, <code>mktemp</code>도 있지만 이건 임시 파일을 만드는 거라 이름이 랜덤이다.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <ul>
+                  <li><code>grep</code>이 "grab"이 아니라 <strong>Global Regular Expression Print</strong>의 약자라는 걸 알게 됐고, 이름의 뜻을 알고 나니 <code>-n</code>·<code>-c</code> 옵션이 왜 그렇게 동작하는지 이해가 됐다.</li>
+                  <li><code>grep -n</code>은 <strong>위치(줄 번호)와 내용</strong>, <code>grep -c</code>는 <strong>개수</strong>를 보여준다는 차이를 명확히 구분하게 됐다.</li>
+                  <li>보안 담당자가 <code>grep</code>을 쓰는 이유가 <strong>"쓰면 안 되는 것이 쓰였는지 빠르게 훑고, 패턴을 뽑아내기 위해서"</strong>라는 걸 알게 됐다.</li>
+                  <li>파이썬에서 <code>.csv</code>를 읽으면 <strong>딕셔너리 형태</strong>로 들어온다는 걸 확인했다.</li>
+                  <li>파일 생성 명령이 <code>mkfile</code>이 아니라 <code>touch</code>인 이유는 <strong>역사적인 이유</strong>이고, <code>mkfile</code>·<code>mktemp</code>는 용도가 다르다는 걸 알게 됐다.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">+</span>
+              <div class="card-content">
+                <h2>다음에 확인할 것</h2>
+                <p>이제 파이프(<code>|</code>)로 넘겨서 <code>grep</code>을 쓰는 방법을 확인해볼 생각이다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
