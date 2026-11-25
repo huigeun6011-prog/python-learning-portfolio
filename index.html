@@ -543,6 +543,60 @@
           </div>
         </div>
       </details>
+
+      <!-- ===== 2026.11.25 (2) ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.25</span>
+          <span class="entry-title">Cisco Packet Tracer 설치하고 장치 세 개 연결하기</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>이번 Mission 부터 네트워크 장치를 직접 놓고 연결하는 실습을 Packet Tracer 로 하기 때문에, 먼저 내 PC 에 설치해야 했다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>NetAcad 계정으로 Packet Tracer 를 설치하고 로그인한 뒤, PC 두 대와 스위치 하나를 연결해 잘 동작하는지 확인하고 <code>docs/</code> 에 기록한다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li>NetAcad 계정을 만들고 Windows 64비트용 설치 파일을 내려받아 설치했다. 설치는 1~2분 걸렸다.</li>
+                  <li>NetAcad 계정으로 로그인해 작업 화면이 열리는 것을 확인했다.</li>
+                  <li>PC 두 대와 스위치 하나를 놓고 구리 직선 케이블(Copper Straight-Through)로 연결했다.</li>
+                  <li>Help → About 에서 버전(9.0.1)을 확인하고 <code>docs/2026-11-25.md</code> 에 기록했다.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <ul>
+                  <li>몇 초 기다리니 스위치 쪽 주황색 원이 초록색 삼각형으로 바뀌어 연결을 확인했다.</li>
+                  <li>기기 종류에 대한 개념은 알고 있었지만, 장치가 UI 어디에 있고 어떻게 연결하는지 파악하는 데에 시간이 조금 걸렸다. 막힌 곳은 모두 해결했다.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
@@ -552,9 +606,9 @@
 </body>
 <script>
   const entries = document.querySelectorAll('.entry');
-  document.getElementById('entry-count').textContent = entries.length;
-
   const dates = [...entries].map(e => e.querySelector('.entry-date').textContent.trim());
+  // 같은 날짜의 항목은 하루로 센다
+  document.getElementById('entry-count').textContent = new Set(dates).size;
   document.getElementById('latest-date').textContent = dates[dates.length - 1] || '-';
 </script>
 </html>
