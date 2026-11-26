@@ -597,6 +597,60 @@
           </div>
         </div>
       </details>
+
+      <!-- ===== 2026.11.26 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.26</span>
+          <span class="entry-title">방화벽을 「기본 차단」으로 바꾸기 (networksim)</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>networksim 의 연습용 네트워크에서 방화벽이 모든 통신을 허용(permit any)하고 있어, DB 까지 인터넷에 열려 있는 상태였다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>방화벽을 기본 차단으로 바꾸고 웹(443)만 허용한 뒤, 고치기 전과 후의 시험 3개 결과를 비교해 <code>docs/2026-11-26.md</code> 에 기록한다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li>✓ Check 로 처음 상태를 확인했다. 시험 3개 중 웹 서버의 80번 시험이 통과하지 못했다(Not yet · 2/3).</li>
+                  <li>기본 정책을 allow everything(permit any)에서 block everything(deny any)으로 바꿨다.</li>
+                  <li>인터넷 → DMZ, tcp, 포트 443만 허용(permit)하는 규칙을 한 줄 추가하고 Save 했다.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <ul>
+                  <li>다시 ✓ Check 를 누르니 시험 3개가 모두 통과했다(Solved!).</li>
+                  <li>80번이 막힌 이유: 기본 정책이 모두 차단이고 443만 허용했기 때문이다. 허용하지 않은 포트는 어떤 규칙에도 맞지 않아 기본 정책에 따라 막힌다.</li>
+                  <li>모두 허용하고 위험한 것만 막으면 빠뜨린 것이 열리지만, 모두 차단하고 필요한 것만 열면 빠뜨려도 막힌다.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
