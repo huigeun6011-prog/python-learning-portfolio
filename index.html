@@ -651,6 +651,59 @@
           </div>
         </div>
       </details>
+
+      <!-- ===== 2026.11.26 · Computer-017 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.26</span>
+          <span class="entry-title">다른 VLAN 연결하기 — L3 스위치 (networksim)</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>networksim 에서 VLAN10 의 PC 와 VLAN20 의 파일 서버가 각자의 L2 스위치 뒤에 있고 서로 연결되어 있지 않았다. 연결 전 통신 시험(Test traffic)은 실패해서 빨갛게 나왔다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>두 네트워크 사이에 L3 스위치를 놓고 통신 시험과 ✓ Check 로 확인한 뒤, <code>docs/2026-11-26.md</code> 에 기록한다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <ul>
+                  <li>L3 스위치(L3-1)를 작업 화면에 놓았다.</li>
+                  <li>위쪽의 두 L2 스위치(SW VLAN10, SW VLAN20)에 각각 연결했다.</li>
+                  <li>Test traffic 과 ✓ Check 를 눌러 확인했다.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <ul>
+                  <li>Test traffic 이 PASSES 로 나왔고, ✓ Check 에서 Solved! 가 나왔다.</li>
+                  <li>PC 와 파일 서버는 서로 다른 IP 네트워크라서, 그 사이를 넘겨 주는 L3 라우팅이 필요했다.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
