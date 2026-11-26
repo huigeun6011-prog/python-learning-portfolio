@@ -704,6 +704,52 @@
           </div>
         </div>
       </details>
+
+      <!-- ===== 2026.11.26 · Network-014 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.26</span>
+          <span class="entry-title">정규표현식으로 로그인 로그 읽기</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>처음엔 로그를 <code>split()</code>으로 잘라 같은 위치에서 계정명을 꺼내면 된다고 생각했다. 그런데 <code>invalid user guest</code>가 들어간 줄에서는 같은 위치에 <code>invalid</code>가 있었다. 코드가 정상 실행돼도 집계가 틀릴 수 있었다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>로그 20줄에서 시각·등급·계정·IP를 뽑고, 정리한 데이터에서 로그인 실패가 반복된 계정과 여러 계정을 시도한 IP를 찾는 과제였다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <p>로그를 처음부터 역슬래시로 구분하는 방법도 생각해 봤다. 사용자명에 같은 문자가 들어가면 칸이 잘못 나뉠 수 있고, 사용자명에 제약을 두면 피할 수 있겠다고 생각했다. 파이썬 풀이와 실행 검증은 에이전트에 맡겼고, <code>search()</code>와 <code>findall()</code>이 같은 문자열에서 각각 무엇을 돌려주는지 예를 들어 확인했다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <p>실행 결과 16건이 정규화됐고 4줄은 별도 파일에 남았다. 탐지 룰은 <code>admin</code> 계정의 실패 4회와 한 IP에서 서로 다른 계정 4개를 시도한 기록을 찾았다. <code>search()</code>가 <code>None</code>을 반환하면 먼저 확인하고, 매치가 있을 때 <code>.groupdict()</code>로 값을 꺼내야 한다는 점을 이해했다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
