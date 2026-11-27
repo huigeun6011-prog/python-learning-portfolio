@@ -795,6 +795,51 @@
           </div>
         </div>
       </details>
+      <!-- ===== 2026.11.27 · Network-026 ===== -->
+      <details class="entry">
+        <summary class="entry-head">
+          <span class="entry-dot"></span>
+          <span class="entry-date">2026.11.27</span>
+          <span class="entry-title">네트워크 장애를 어디부터 확인할까</span>
+          <span class="entry-chevron">▾</span>
+        </summary>
+
+        <div class="entry-body">
+          <div class="star-list">
+            <article class="card">
+              <span class="badge">S</span>
+              <div class="card-content">
+                <h2>Situation · 상황</h2>
+                <p>웹사이트가 열리지 않을 때 IP 통신, 이름 조회, 웹 서비스 중 어디서 막혔는지 구분하는 과제였다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">T</span>
+              <div class="card-content">
+                <h2>Task · 과제</h2>
+                <p>Windows에서 <code>ping</code>, <code>ipconfig</code>, <code>arp</code>, <code>netstat</code> 결과를 읽어 보고서에 기록하는 과제였다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">A</span>
+              <div class="card-content">
+                <h2>Action · 행동</h2>
+                <p>명령 실행과 보고서 작성은 에이전트에 맡겼다. 질문을 주고받으면서 DNS 캐시를 어떻게 확인할지, 외부 IP로 보낼 때 첫 프레임의 목적지 MAC이 무엇인지, TCP 연결 상태로 어디까지 알 수 있는지 설명해 봤다.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="badge">R</span>
+              <div class="card-content">
+                <h2>Result · 결과</h2>
+                <p>에이전트가 실행한 결과 기본 게이트웨이 응답은 1ms 미만이었고, <code>8.8.8.8</code>은 열 번 모두 응답해 평균 35ms였다. 두 응답의 TTL을 비교할 때는 장비마다 처음 넣는 TTL이 다를 수 있어, 차이만으로 홉 수를 알 수 없다는 점을 짚었다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </main>
 
